@@ -3,7 +3,7 @@ import {
   selectRandomNumber,
   generateRandomNum,
   askMessage,
-  isCorrect, selectRandomNumber,
+  isCorrect,
 } from "../src/index.js";
 import askName, { inputHistory } from '../src/cli.js';
 
