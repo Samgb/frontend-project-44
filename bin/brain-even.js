@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import {generateRandomNum, numberIsEven, askRightAnswer} from "../src/index.js";
-import askName, {inputHistory} from "../src/cli.js";
+import {numberIsEven, askRightAnswer} from "../src/index.js";
+import askName from "../src/cli.js";
 
 askName();
 
