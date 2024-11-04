@@ -73,25 +73,3 @@ export const askRightAnswer = (numberQuestion = 0, callback) => {
       console.log('Wrong answer. Try again!');
    }
 }
-
-//
-// export const askRightAnswer = (numberQuestion = 0, callback) => {
-//    if (numberQuestion >= 3) {
-//       return console.log('Congratulations, ' + inputHistory.name + '!')
-//    }
-//
-//    const randomNumber = generateRandomNum();
-//    console.log('Question:' + randomNumber);
-//
-//    const ask = readlineSync.question('Your answer: ');
-//
-//    if (callback(randomNumber) === ask) {
-//       console.log('Correct!');
-//       askRightAnswer(numberQuestion + 1, callback);
-//    } else if (callback(randomNumber) === ask) {
-//       console.log('Correct!');
-//       askRightAnswer(numberQuestion + 1, callback);
-//    } else {
-//       console.log('Wrong answer. Try again!');
-//    }
-// }
