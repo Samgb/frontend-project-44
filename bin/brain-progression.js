@@ -12,7 +12,7 @@ import askName, {inputHistory} from "../src/cli.js";
 
 askName();
 
-console.log('What number is missing in this progression?');
+console.log('What number is missing in the progression?');
 
 const brainProgression = (count = 0) => {
 
