@@ -70,6 +70,6 @@ export const askRightAnswer = (numberQuestion = 0, callback) => {
       console.log('Correct!');
       askRightAnswer(numberQuestion + 1, callback);
    } else {
-      console.log('Wrong answer. Try again!');
+      console.log(`Let's try again, ${inputHistory.name}!`);
    }
 }
