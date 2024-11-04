@@ -1,13 +1,9 @@
-import { inputHistory } from './cli.js';
 import readlineSync from 'readline-sync';
+import { inputHistory } from './cli.js';
 
-export const generateRandomNum = () => {
-  return Math.floor(Math.random() * 100);
-};
+export const generateRandomNum = () => Math.floor(Math.random() * 100);
 
-export const numberIsEven = (num) => {
-  return num % 2 === 0 ? 'yes' : 'no';
-};
+export const numberIsEven = (num) => num % 2 === 0 ? 'yes' : 'no';
 
 export const randomOperator = () => {
   const operators = ['+', '-', '*'];
@@ -53,9 +49,7 @@ export const isPrime = (num) => {
 };
 
 // OLD
-export const isCorrect = (ask, callback) => {
-  return Number(ask) === Number(callback);
-};
+export const isCorrect = (ask, callback) => Number(ask) === Number(callback);
 
 export const askRightAnswer = (callback, numberQuestion = 0) => {
   if (numberQuestion >= 3) {
@@ -70,7 +64,6 @@ export const askRightAnswer = (callback, numberQuestion = 0) => {
   if (callback(randomNumber) === ask) {
     console.log('Correct!');
     return askRightAnswer(callback, numberQuestion + 1);
-  } else {
-    return console.log(`Let's try again, ${inputHistory.name}!`);
   }
+  return console.log(`Let's try again, ${inputHistory.name}!`);
 };

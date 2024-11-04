@@ -23,9 +23,8 @@ const brainPrime = (num1, count = 0) => {
   if ((decision === true && answer === 'yes') || (decision === false && answer === 'no')) {
     console.log('Correct!');
     return brainPrime(generateRandomNum(), count + 1);
-  } else {
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision}'. \n Let's try again, ${inputHistory.name}!`);
   }
+  return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision}'. \n Let's try again, ${inputHistory.name}!`);
 };
 
 brainPrime(generateRandomNum(), 0);

@@ -28,9 +28,8 @@ const brainGcd = (num1, num2, count = 0) => {
   if (isCorrect(answer, decision(num1, num2))) {
     console.log('Correct!');
     return brainGcd(generateRandomNum(), generateRandomNum(), count + 1);
-  } else {
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision(num1, num2)}'. \n Let's try again, ${inputHistory.name}!`);
   }
+  return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision(num1, num2)}'. \n Let's try again, ${inputHistory.name}!`);
 };
 
 brainGcd(generateRandomNum(), generateRandomNum(), 0);

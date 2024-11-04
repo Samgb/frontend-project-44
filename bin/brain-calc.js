@@ -3,9 +3,10 @@ import {
   randomOperator,
   calculations,
   generateRandomNum,
-  askMessage, isCorrect
+  askMessage,
+  isCorrect,
 } from '../src/index.js';
-import askName, {inputHistory} from '../src/cli.js';
+import askName, { inputHistory } from '../src/cli.js';
 
 askName();
 
@@ -24,7 +25,7 @@ const brainCalc = (num1, num2, count = 0) => {
 
   if (isCorrect(answer, decision)) {
     console.log('Correct!');
-    brainCalc(generateRandomNum(), generateRandomNum(), count + 1);
+    return brainCalc(generateRandomNum(), generateRandomNum(), count + 1);
   } else {
     return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision}'. \n Let's try again, ${inputHistory.name}!`);
   }

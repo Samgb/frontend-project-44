@@ -4,7 +4,7 @@ import {
   generateRandomNum,
   askMessage,
   isCorrect,
-} from "../src/index.js";
+} from '../src/index.js';
 import askName, { inputHistory } from '../src/cli.js';
 
 askName();
@@ -35,9 +35,8 @@ const brainProgression = (count = 0) => {
   if (isCorrect(answer, decision)) {
     console.log('Correct!');
     return brainProgression(count + 1);
-  } else {
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision}'. \n Let's try again, ${inputHistory.name}!`);
   }
+  return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision}'. \n Let's try again, ${inputHistory.name}!`);
 };
 
 brainProgression(0);
