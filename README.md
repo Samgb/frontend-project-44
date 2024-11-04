@@ -3,6 +3,10 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/996be0a17ce00ba2473f/maintainability)](https://codeclimate.com/github/Samgb/frontend-project-44/maintainability)
 
+[//]: # (Brain-games)
+https://asciinema.org/a/Lg3Z6MdeEvyLKG2phJCUt08FA
+
+[//]: # (Brain-even  )
 https://asciinema.org/a/0JmEfvjE1GQgOmNRMC2RwbXnf
 
 [//]: # (Brain-calc)
