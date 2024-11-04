@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import {
-  randomNumber,
+  selectRandomNumber,
   generateRandomNum,
   askMessage,
-  isCorrect,
+  isCorrect, selectRandomNumber,
 } from "../src/index.js";
 import askName, { inputHistory } from '../src/cli.js';
 
@@ -18,13 +18,13 @@ const brainProgression = (count = 0) => {
 
   const arrNumbers = [];
   arrNumbers.push(generateRandomNum());
-  const progressive = randomNumber(2, 3, 4, 5, 6);
+  const progressive = selectRandomNumber(2, 3, 4, 5, 6);
 
   for (let i = 0; i < 10; i += 1) {
     arrNumbers.push(arrNumbers[i] + progressive);
   }
 
-  const randomArr = randomNumber(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+  const randomArr = selectRandomNumber(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
   const decision = arrNumbers[randomArr];
   arrNumbers[randomArr] = '..';
 

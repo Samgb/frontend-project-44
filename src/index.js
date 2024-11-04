@@ -14,7 +14,7 @@ export const randomOperator = () => {
   return operators[Math.floor(Math.random() * operators.length)];
 };
 
-export const randomNumber = (...args) => {
+export const selectRandomNumber = (...args) => {
   const symbol = [...args];
   return symbol[Math.floor(Math.random() * symbol.length)];
 };
@@ -62,12 +62,12 @@ export const askRightAnswer = (callback, numberQuestion = 0) => {
     return console.log(`Congratulations, ${inputHistory.name}!`);
   }
 
-  const randomNum = generateRandomNum();
-  console.log(`Question: ${randomNum}`);
+  const randomNumber = generateRandomNum();
+  console.log(`Question: ${randomNumber}`);
 
   const ask = readlineSync.question('Your answer: ');
 
-  if (callback(randomNum) === ask) {
+  if (callback(randomNumber) === ask) {
     console.log('Correct!');
     return askRightAnswer(callback, numberQuestion + 1);
   } else {
