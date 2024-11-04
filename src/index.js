@@ -62,7 +62,7 @@ export const askRightAnswer = (numberQuestion = 0, callback) => {
    }
 
    const randomNumber = generateRandomNum();
-   console.log('Question:' + randomNumber);
+   console.log('Question: ' + randomNumber);
 
    const ask = readlineSync.question('Your answer: ');
 
