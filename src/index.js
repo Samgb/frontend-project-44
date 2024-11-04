@@ -34,9 +34,22 @@ export const askMessage = (...args) =>  {
 
    const ask = readlineSync.question(...args);
    return ask;
-
 }
 
+export const isPrime =(num) => {
+   if (num <= 1) return false; // 0 и 1 не являются простыми числами
+   if (num <= 3) return true; // 2 и 3 — простые числа
+
+   // Если число делится на 2 или на 3, оно не простое
+   if (num % 2 === 0 || num % 3 === 0) return false;
+
+   // Проверка возможных делителей от 5 до √num
+   for (let i = 5; i * i <= num; i += 6) {
+      if (num % i === 0 || num % (i + 2) === 0) return false;
+   }
+
+   return true; // Если число не делится ни на один из проверенных делителей, оно простое
+}
 
 // OLD
 export const  isCorrect = (ask, callback) => {
