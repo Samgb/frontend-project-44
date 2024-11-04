@@ -12,7 +12,7 @@ import askName, {inputHistory} from "../src/cli.js";
 
 askName();
 
-console.log('Find the greatest common divisor of given numbers.');
+console.log('What number is missing in this progression?');
 
 const brainProgression = (count = 0) => {
 
