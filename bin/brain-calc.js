@@ -26,9 +26,8 @@ const brainCalc = (num1, num2, count = 0) => {
   if (isCorrect(answer, decision)) {
     console.log('Correct!');
     return brainCalc(generateRandomNum(), generateRandomNum(), count + 1);
-  } else {
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision}'. \n Let's try again, ${inputHistory.name}!`);
   }
+  return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision}'. \n Let's try again, ${inputHistory.name}!`);
 };
 
 brainCalc(generateRandomNum(), generateRandomNum(), 0);

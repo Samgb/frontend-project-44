@@ -3,7 +3,9 @@ import { inputHistory } from './cli.js';
 
 export const generateRandomNum = () => Math.floor(Math.random() * 100);
 
-export const numberIsEven = (num) => num % 2 === 0 ? 'yes' : 'no';
+export const numberIsEven = (num) => {
+  return num % 2 === 0 ? 'yes' : 'no';
+}
 
 export const randomOperator = () => {
   const operators = ['+', '-', '*'];
