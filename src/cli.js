@@ -8,8 +8,8 @@ const askName = () => {
   const name = readlineSync.question('May I have your name? ');
   name !== '' ? console.log(`Hello, ${name}!`) : console.log('Hello!');
   inputHistory.name = name;
-}
+};
 
 export default askName;
 
-export {inputHistory}
+export { inputHistory };

@@ -1,23 +1,23 @@
-import {inputHistory} from "./cli.js";
-import readlineSync from "readline-sync";
+import { inputHistory } from './cli.js';
+import readlineSync from 'readline-sync';
 
 export const generateRandomNum = () => {
   return Math.floor(Math.random() * 100);
-}
+};
 
 export const numberIsEven = (num) => {
   return num % 2 === 0 ? 'yes' : 'no';
-}
+};
 
 export const randomOperator = () => {
   const operators = ['+', '-', '*'];
   return operators[Math.floor(Math.random() * operators.length)];
-}
+};
 
 export const randomNumber = (...args) => {
   const symbol = [...args];
   return symbol[Math.floor(Math.random() * symbol.length)];
-}
+};
 
 export const calculations = (num1, num2, operator) => {
   switch (operator) {
@@ -27,14 +27,15 @@ export const calculations = (num1, num2, operator) => {
       return num1 - num2;
     case '*':
       return num1 * num2;
+    default:
+      return '+';
   }
-}
+};
 
 export const askMessage = (...args) => {
-
   const ask = readlineSync.question(...args);
   return ask;
-}
+};
 
 export const isPrime = (num) => {
   if (num <= 1) return false; // 0 и 1 не являются простыми числами
@@ -49,27 +50,27 @@ export const isPrime = (num) => {
   }
 
   return true; // Если число не делится ни на один из проверенных делителей, оно простое
-}
+};
 
 // OLD
 export const isCorrect = (ask, callback) => {
-  return Number(ask) === Number(callback) ? true : false;
-}
+  return Number(ask) === Number(callback);
+};
 
-export const askRightAnswer = (numberQuestion = 0, callback) => {
+export const askRightAnswer = (callback, numberQuestion = 0) => {
   if (numberQuestion >= 3) {
-    return console.log('Congratulations, ' + inputHistory.name + '!')
+    return console.log(`Congratulations, ${inputHistory.name}!`);
   }
 
-  const randomNumber = generateRandomNum();
-  console.log('Question: ' + randomNumber);
+  const randomNum = generateRandomNum();
+  console.log(`Question: ${randomNum}`);
 
   const ask = readlineSync.question('Your answer: ');
 
-  if (callback(randomNumber) === ask) {
+  if (callback(randomNum) === ask) {
     console.log('Correct!');
-    askRightAnswer(numberQuestion + 1, callback);
+    return askRightAnswer(callback, numberQuestion + 1);
   } else {
-    console.log(`Let's try again, ${inputHistory.name}!`);
+    return console.log(`Let's try again, ${inputHistory.name}!`);
   }
-}
+};

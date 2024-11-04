@@ -2,26 +2,26 @@
 import {
   randomNumber,
   generateRandomNum,
-  askMessage, isCorrect
+  askMessage,
+  isCorrect,
 } from "../src/index.js";
-import askName, {inputHistory} from "../src/cli.js";
+import askName, { inputHistory } from '../src/cli.js';
 
 askName();
 
 console.log('What number is missing in the progression?');
 
 const brainProgression = (count = 0) => {
-
   if (count >= 3) {
-    return console.log('Congratulations, ' + inputHistory.name + '!');
+    return console.log(`Congratulations, ${inputHistory.name}!`);
   }
 
-  const arrNumbers = []
+  const arrNumbers = [];
   arrNumbers.push(generateRandomNum());
   const progressive = randomNumber(2, 3, 4, 5, 6);
 
-  for (let i = 0; i < 10; i++) {
-    arrNumbers.push(arrNumbers[i] + progressive)
+  for (let i = 0; i < 10; i += 1) {
+    arrNumbers.push(arrNumbers[i] + progressive);
   }
 
   const randomArr = randomNumber(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -30,15 +30,14 @@ const brainProgression = (count = 0) => {
 
   const stringArr = arrNumbers.join(' ');
   console.log('Question:', stringArr);
-  const answer = askMessage(`Your answer: `);
+  const answer = askMessage('Your answer: ');
 
   if (isCorrect(answer, decision)) {
     console.log('Correct!');
-    brainProgression(count + 1);
+    return brainProgression(count + 1);
   } else {
     return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${decision}'. \n Let's try again, ${inputHistory.name}!`);
   }
-}
+};
 
 brainProgression(0);
-
