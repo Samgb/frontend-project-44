@@ -32,8 +32,8 @@ const brainProgression = (count = 0) => {
    const decision = arrNumbers[randomArr];
    arrNumbers[randomArr] = '..';
 
-   const stringArr = arrNumbers.join(', ');
-   console.log('Question: ', stringArr);
+   const stringArr = arrNumbers.join(' ');
+   console.log('Question:', stringArr);
    const answer = askMessage(`Your answer: `);
 
    if (isCorrect(answer, decision)) {
