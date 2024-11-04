@@ -14,6 +14,11 @@ export const randomOperator = () => {
    return operators[Math.floor(Math.random() * operators.length)];
 }
 
+export const randomNumber = (...args) => {
+   const symbol = [...args];
+   return symbol[Math.floor(Math.random() * symbol.length)];
+}
+
 export const calculations = (num1, num2, operator) => {
    switch (operator) {
       case '+':

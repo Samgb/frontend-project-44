@@ -18,7 +18,6 @@ const brainGcd = (num1, num2, count = 0) => {
       return console.log('Congratulations, ' + inputHistory.name + '!');
    }
 
-   const operator = randomOperator();
    console.log(`Question: ${num1} ${num2}`);
 
    const answer = askMessage(`Your answer: `);
