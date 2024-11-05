@@ -3,9 +3,11 @@ import { inputHistory } from './cli.js';
 
 export const generateRandomNum = () => Math.floor(Math.random() * 100);
 
-export const numberIsEven = (num) => {
-  return num % 2 === 0 ? 'yes' : 'no';
-}
+// export const numberIsEven = (num) => {
+//   return num % 2 === 0 ? 'yes' : 'no';
+// };
+
+export const numberIsEven = (num) => (num % 2 === 0);
 
 export const randomOperator = () => {
   const operators = ['+', '-', '*'];
@@ -62,8 +64,9 @@ export const askRightAnswer = (callback, numberQuestion = 0) => {
   console.log(`Question: ${randomNumber}`);
 
   const ask = readlineSync.question('Your answer: ');
+  const stringResult = callback(randomNumber) ? 'yes' : 'no';
 
-  if (callback(randomNumber) === ask) {
+  if (stringResult === ask) {
     console.log('Correct!');
     return askRightAnswer(callback, numberQuestion + 1);
   }
